@@ -1,11 +1,12 @@
 import 'package:conditional_builder/conditional_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shop_app/modules/home_layout/home_layout.dart';
+import 'package:shop_app/layout/home_layout.dart';
 import 'package:shop_app/modules/shop_register_screen/shop_register_screen.dart';
 import 'package:shop_app/shared/components/components.dart';
-import 'package:shop_app/shared/cubit/cubit.dart';
-import 'package:shop_app/shared/cubit/states.dart';
+import 'package:shop_app/shared/components/constans.dart';
+import 'package:shop_app/shared/cubit/shop_login_cubit/cubit.dart';
+import 'package:shop_app/shared/cubit/shop_login_cubit/states.dart';
 import 'package:shop_app/shared/network/local/cache_helper.dart';
 
 class ShopLoginScreen extends StatelessWidget
@@ -17,16 +18,16 @@ class ShopLoginScreen extends StatelessWidget
   @override
   Widget build(BuildContext context)
   {
-    return BlocProvider(create: (context)=>AppCubit(),
-    child: BlocConsumer<AppCubit,AppStates>(
+    return BlocConsumer<AppCubit,AppStates>(
       listener: (context,state){
         if (state is ShopLoginSuccessState) {
           if (state.loginModel.status) {
             showToast(text: state.loginModel.message, color: Colors.green)
                 .then((value) {
               CacheHelper.setData(
-                  key: "token", value: state.loginModel.data.token)
+                  key: 'token', value: state.loginModel.data.token)
                   .then((value) {
+                    token=state.loginModel.data.token;
                 navigateAndFinish(context,HomeLayout());
               });
             });
@@ -116,7 +117,6 @@ class ShopLoginScreen extends StatelessWidget
           ),
         );
       },
-    ),
     );
   }
 }

@@ -1,6 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
+Widget buildDivider({@required Color color}) => Padding(
+  padding: EdgeInsetsDirectional.only(start: 0),
+  child: Container(
+    height: 1,
+    width: double.infinity,
+    color: color,
+  ),
+);
+
 void navigateTo(context, widget) => Navigator.push(
   context,
   MaterialPageRoute(

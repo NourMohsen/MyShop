@@ -24,12 +24,12 @@ ThemeData darkTheme = ThemeData(
       color: Colors.white,
     ),
   ),
-  floatingActionButtonTheme: FloatingActionButtonThemeData(
-    backgroundColor: Colors.deepOrange,
-  ),
+  // floatingActionButtonTheme: FloatingActionButtonThemeData(
+  //   backgroundColor: Colors.deepOrange,
+  // ),
   bottomNavigationBarTheme: BottomNavigationBarThemeData(
     type: BottomNavigationBarType.fixed,
-    selectedItemColor: Colors.deepOrange,
+    selectedItemColor: defaultColor,
     unselectedItemColor: Colors.grey,
     elevation: 20.0,
     backgroundColor: HexColor('333739'),
@@ -70,7 +70,7 @@ ThemeData lightTheme = ThemeData(
   // ),
   bottomNavigationBarTheme: BottomNavigationBarThemeData(
     type: BottomNavigationBarType.fixed,
-    selectedItemColor: Colors.deepOrange,
+    selectedItemColor: defaultColor,
     unselectedItemColor: Colors.grey,
     elevation: 20.0,
     backgroundColor: Colors.white,

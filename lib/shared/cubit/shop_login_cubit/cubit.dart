@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shop_app/models/shop_login_model.dart';
-import 'package:shop_app/shared/cubit/states.dart';
+import 'package:shop_app/shared/cubit/shop_login_cubit/states.dart';
 import 'package:shop_app/shared/network/end_point.dart';
 import 'package:shop_app/shared/network/remote/dio_helper.dart';
 
